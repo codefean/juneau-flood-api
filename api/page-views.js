@@ -7,7 +7,7 @@ const analyticsDataClient = new BetaAnalyticsDataClient({
   },
 });
 
-const propertyId = '400640057'; // your GA4 property ID
+const propertyId = '400640057'; 
 
 export default async function handler(req, res) {
   try {
