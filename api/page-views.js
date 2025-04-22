@@ -26,8 +26,8 @@ export default async function handler(req, res) {
 
     const views = response.rows?.[0]?.metricValues?.[0]?.value || '0';
     res.status(200).json({ views: parseInt(views, 10) });
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: 'Failed to fetch GA views' });
-  }
+} catch (err) {
+    console.error('GA API Error:', err);
+    res.status(500).json({ error: err.message || 'Unknown error' });
+  }  
 }
